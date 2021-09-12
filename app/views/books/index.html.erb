@@ -1,7 +1,6 @@
 <body>
   <p id="notice"></p>
   <h1>Books</h1>
-  <% @book.each do |book| %>
 
   <table>
     <thead>
@@ -11,29 +10,37 @@
         <th colspan="3"></th>
       </tr>
     </thead>
+
     <tbody>
-      <tr>
-        <td><%= book.title %></td>
-        <td><%= book.body %></td>
-        <td><%= link_to "Show", book_path(@book) %></td>
-        <td><%= link_to "Edit", edit_book_path(@book) %></td>
-        <td><%= link_to "Destroy", book_path(@book), method: :delete %></td>
-      </tr>
+      <% @book.each do |book| %>
+        <tr>
+          <td><%= book.title %></td>
+          <td><%= book.body %></td>
+          <td><%= link_to "Show", book_path(book.id), class: "link" %></td>
+          <td><%= link_to "Edit", edit_book_path(book.id), class: "link" %></td>
+          <td><%= link_to "Destroy", book_path(@book), class: "link", method: :delete %></td>
+        </tr>
+      <% end %>
     </tbody>
 
   </table>
-  <% end %>
 
   <h2>New book</h2>
   <%= form_with model: Book, local:true do |f| %>
 
-  <h4>Title</h4>
-  <%= f.text_field :title %>
+    <div class="field">
+      <label for="book_title">Title</label>
+      <%= f.text_field :title, :class => "book_title" %>
+    </div>
 
-  <h4>Body</h4>
-  <%= f.text_area :body %>
+    <div class="field">
+      <label for="book_body">Body</label>
+      <%= f.text_area :body, :class => "book_body" %>
+    </div>
 
-  <%= f.submit 'Create Book' %>
+    <div class="actions">
+      <%= f.submit 'Create Book' %>
+    </div>
 
 <% end %>
 

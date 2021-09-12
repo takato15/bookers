@@ -33,3 +33,30 @@ p, ol, ul, td {
 a {
   color: black;
 }
+
+td {
+    padding-bottom: 7px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#notice {
+  color: green;
+}
+
+th {
+    padding-bottom: 5px;
+}
+
+.link:hover {
+  color: white;
+  background-color: black;
+}
+
+div.field, div.actions {
+    margin-bottom: 10px;
+}
+
+label {
+  display: block
+}
