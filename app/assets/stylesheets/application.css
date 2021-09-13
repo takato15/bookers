@@ -65,3 +65,12 @@ div.field, div.actions {
 label {
   display: block
 }
+
+.errors {
+  background-color: red;
+  color: white;
+  font-weight:  bold;
+  font-size: 15px;
+  line-height: 30px;
+  padding-left: 10px;
+}
